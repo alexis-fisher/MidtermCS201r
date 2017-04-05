@@ -1,7 +1,10 @@
-angular.module('comment', [])
-.controller('MainCtrl', [
-  '$scope','$http',
-  function($scope,$http){
+var comment = window.angular.module('comment', [])
+
+app.controller('MainCtrl', MainCtrl)
+
+
+function MainCtrl ($scope,$http) {
+  
     $scope.comments = [];
     $scope.addComment = function() {
       var newcomment = {title:$scope.formContent,upvotes:0};
@@ -34,5 +37,4 @@ angular.module('comment', [])
     };
     $scope.getAll();
 
-  }
-]);
+}
