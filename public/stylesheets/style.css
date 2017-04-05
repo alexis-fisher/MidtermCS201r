@@ -27,11 +27,11 @@ li {
 	border: 1px solid black;
 	margin-top: 10px;
 	margin-bottom:10px;
-	padding: 10px 10px 10px 10px;
+	padding: 10px 10px 10px 20px;
 	box-shadow: 5px 5px 2.5px #888888;
 	border-radius: 5px;
 }
 
 .photo {
-  width:50px;
+  height:70px;
 }

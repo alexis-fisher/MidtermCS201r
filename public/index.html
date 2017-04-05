@@ -8,11 +8,10 @@
 
 </head>
 <body ng-app="comment" ng-controller="MainCtrl">
-<div class="row">
-<div class="col-md-6 col-md-offset-3">
+<div class="col-md-8 col-md-offset-2">
 <div class="page-header"> 
   <h1>Conference Reading List</h1>
-  <h4>Upvote your favorite talks, and delete the boring ones! </h4>
+  <h4>Upvote your favorite talks, and delete them after you've studied them! </h4>
 </div>
 
   <form ng-submit="addComment()" style = "margin-top30px;">
@@ -22,12 +21,11 @@
     <input type="text" ng-model="Title" id="title" placeholder="Title"></input>
     <button type="submit">Add Talk</button>
   </form>
-  <div ng-repeat="comment in comments | orderBy: '-upvotes'">
+  <div ng-repeat="comment in comments | orderBy: ['-upvotes','-session']">
 <li>    <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(comment)"></span>
-    {{comment.session}} <img class='photo' ng-src="{{comment.url}}"> </img> {{comment.speaker}} * {{comment.title}} - upvotes: {{comment.upvotes}}
+    {{comment.session}} <img class='photo' ng-src="{{comment.url}}"> </img> {{comment.speaker}} &#183 {{comment.title}} - upvotes: {{comment.upvotes}}
     <span class="glyphicon glyphicon-remove" ng-click="delete(comment)"></span>    
 </li>  </div>
-</div>
 </div>
 </body>
 </html>
