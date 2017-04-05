@@ -11,21 +11,21 @@
 <div class="row">
 <div class="col-md-6 col-md-offset-3">
 <div class="page-header"> 
-  <h1>We need your opinions</h1>
-  <h4>Upvote your favorite comments, and delete the boring ones! </h4>
+  <h1>Conference Reading List</h1>
+  <h4>Upvote your favorite talks, and delete the boring ones! </h4>
 </div>
 
   <form ng-submit="addComment()" style = "margin-top30px;">
-    <input type="text" ng-model="formContent" id="session" placeholder="Session (yyyyM)"></input>
+    <input type="text" ng-model="Session" id="session" placeholder="Session (yyyyM)"></input>
     <input type="url" ng-model="Url" id="picURL" placeholder="Picture's URL"></input>
-    <input type="text" id="speaker" placeholder="Speaker"></input>
-    <input type="text" id="title" placeholder="Title"></input>
-    <button type="submit">Add Comment</button>
+    <input type="text" ng-model="Speaker" id="speaker" placeholder="Speaker"></input>
+    <input type="text" ng-model="Title" id="title" placeholder="Title"></input>
+    <button type="submit">Add Talk</button>
   </form>
 <li>  <div ng-repeat="comment in comments | orderBy: '-upvotes'">
-    <span class="glyphicon glyphicon-remove" ng-click="delete(comment)"></span>
     <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(comment)"></span>
-    {{comment.title}} - upvotes: {{comment.upvotes}}
+    {{comment.session}} PIC {{comment.speaker}} * {{comment.title}} - upvotes: {{comment.upvotes}}
+    <span class="glyphicon glyphicon-remove" ng-click="delete(comment)"></span>    
 </li>  </div>
 </div>
 </div>
