@@ -22,9 +22,9 @@
     <input type="text" ng-model="Title" id="title" placeholder="Title"></input>
     <button type="submit">Add Talk</button>
   </form>
-<li>  <div ng-repeat="comment in comments | orderBy: '-upvotes'">
-    <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(comment)"></span>
-    {{comment.session}} PIC {{comment.speaker}} * {{comment.title}} - upvotes: {{comment.upvotes}}
+  <div ng-repeat="comment in comments | orderBy: '-upvotes'">
+<li>    <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(comment)"></span>
+    {{comment.session}} <img class='photo' ng-src="{{comment.url}}"> </img> {{comment.speaker}} * {{comment.title}} - upvotes: {{comment.upvotes}}
     <span class="glyphicon glyphicon-remove" ng-click="delete(comment)"></span>    
 </li>  </div>
 </div>
